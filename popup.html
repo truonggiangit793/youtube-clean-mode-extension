@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Youtube Clean Mode</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <style>
+            body {
+                color: white;
+                width: 400px;
+                height: 500px;
+                position: relative;
+            }
+            #header {
+                z-index: 10;
+                top: 0;
+                height: 50px;
+                width: 100%;
+                position: fixed;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 18px;
+                font-weight: 600;
+                font-family: monospace;
+                background-color: #252666;
+                box-shadow: 0px -1px 10px 0px #00000087;
+            }
+            #main {
+                height: 100%;
+                width: 100%;
+                overflow-y: scroll;
+                position: absolute;
+                padding: 60px 16px 16px 16px;
+            }
+            .overlay {
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: linear-gradient(to bottom, #6d56ce, #b175b3);
+            }
+            p.title {
+                color: #19f3ff;
+                font-size: 20px;
+            }
+            .ycm-highlight {
+                color: #ffc9e0 !important;
+            }
+            img {
+                box-shadow: 1px 1px 10px -4px #000000b3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <div id="header">
+            <img src="./assets/video-player.png" width="30px" />
+            <p class="m-0 ml-4">Youtube Clean Mode</p>
+        </div>
+        <section id="main">
+            <div class="mb-4">
+                <p class="font-weight-bold title">1. Introduction</p>
+                <p>Hi, there!</p>
+                <p>I'm Truong Giang. I have noticed that your experience using Youtube is not comfortable due to some elements displayed.</p>
+                <p>Therefore, I have created this extension to bring you comfort while using Youtube.</p>
+                <p>If you find it helpful, you can buy me a coffee as donating. Thank you!</p>
+            </div>
+            <div class="mb-4">
+                <p class="font-weight-bold title">2. Check accessibility</p>
+                <div class="mb-2">
+                    <img src="./assets/img1.png" width="100%" />
+                </div>
+                <p>
+                    The Jungle Green settings button is now accessible from Youtube webpage. If you see no settings button, please refresh the webpage in the browser or close your Youtube tab and re-open. If after refreshing, the settings button is
+                    still not shown you, keep contact with me.
+                </p>
+                <p>My email address: <span class="ycm-highlight">giang66.dev@gmail.com</span>.</p>
+            </div>
+            <div class="mb-4">
+                <p class="font-weight-bold title">3. Menu settings</p>
+                <p>When you click on the settings button, you can see the menu settings like this.</p>
+                <div class="mb-4 d-flex justify-content-center w-100">
+                    <img src="./assets/img2.png" width="100%" />
+                </div>
+                <p>These settings allow you:</p>
+                <p>- <span class="font-weight-bold text-warning">Hide title:</span> allow you to hide the title of current video.</p>
+                <p>- <span class="font-weight-bold text-warning">Hide header:</span> allow you to hide the header title in fullscreen mode.</p>
+                <p>- <span class="font-weight-bold text-warning">Hide controller:</span> allow you to hide the video controller.</p>
+                <p>- <span class="font-weight-bold text-warning">Hide progress:</span> allow you to hide the progress bar in the controller.</p>
+                <p>- <span class="font-weight-bold text-warning">Theater mode:</span> this setting will highlight the video frame by blurring the background. Notice: this option cannot accessible in fullscreen mode.</p>
+                <p>- <span class="font-weight-bold text-warning">All:</span> quickstart to hide all settings above.</p>
+            </div>
+            <div class="mb-4">
+                <p class="font-weight-bold title">4. I clicked the settings button but see no menu settings?</p>
+                <p>"I can see the settings button accessible. However, when I clicked on it, the menu not appeared."</p>
+                <p>If you have an issue like that, do not be confused. Close the current tab of Youtube, then open another tab.</p>
+                <p>If even after opened in the new tab, the menu settings still not working. Shutting down your browser and re-open it.</p>
+                <p>Be enjoyed!</p>
+            </div>
+            <div class="mb-4">
+                <p class="font-weight-bold title">5. Support me!</p>
+                <p>If you find this extension is helpful, you can buy me a coffee as donating.</p>
+                <div class="mb-4">
+                    <p>My MOMO number:</p>
+                    <div class="d-flex w-100 justify-content-center">
+                        <img src="./assets/momo.jpg" width="100%" />
+                    </div>
+                </div>
+                <p>Thank you, hope you enjoy it!</p>
+            </div>
+        </section>
+    </body>
+</html>

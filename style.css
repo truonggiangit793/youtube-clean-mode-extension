@@ -1,0 +1,153 @@
+/* Replace youtube default */
+h1.style-scope.ytd-watch-metadata {
+    transition: all 0.5s linear;
+}
+h1.style-scope.ytd-watch-metadata.disabled {
+    padding-left: 10px;
+    text-shadow: 0 0 8px white;
+    color: transparent;
+}
+div.ytp-chrome-top.disabled,
+div.ytp-chrome-controls.disabled,
+div.ytp-progress-bar-container.disabled {
+    display: none;
+}
+/* Replace youtube default */
+
+/* Menu container */
+#ycm-menu-container {
+    width: 215px;
+    height: 256px;
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    font-size: 20px;
+    padding: 10px 0;
+    user-select: none;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: all 0.2 linear;
+    background: var(--yt-spec-menu-background);
+    box-shadow: 0px 4px 32px 0px rgb(0 0 0 / 10%);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+#ycm-menu-container.enabled {
+    display: flex !important;
+}
+/* Menu container */
+
+/* Settings button */
+#ycm-setting-button {
+    user-select: none;
+    z-index: 2060;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    border-radius: 100px;
+    margin-left: 8px;
+    justify-content: center;
+    align-items: center;
+    background: rgb(22, 160, 132);
+    transition: all 0.5 linear;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#ycm-setting-button:hover {
+    background: rgba(22, 160, 132, 0.7) !important;
+}
+/* Settings button */
+
+/* Menu item */
+.ycm-menu-item {
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    transition: all 0.2 linear;
+    user-select: none;
+    justify-content: space-between;
+}
+.ycm-menu-item:hover {
+    background: var(--yt-spec-10-percent-layer);
+}
+.ycm-menu-label p {
+    user-select: none;
+    color: var(--yt-spec-text-primary);
+    white-space: nowrap;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+/* Menu item */
+
+/* Checkbox Input */
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.check-trail {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 20px;
+    background: #57626e;
+    border-radius: 2.5em;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.check-handler {
+    display: flex;
+    margin-left: 0.5em;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    background: #57626e;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.check-handler:before {
+    content: "×";
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+input[type="checkbox"]:checked + .check-trail {
+    background: #16a085;
+}
+input[type="checkbox"]:checked + .check-trail .check-handler {
+    margin-left: 50%;
+    background: #1abc9c;
+}
+input[type="checkbox"]:checked + .check-trail .check-handler::before {
+    content: "✔";
+}
+div.ycm-checkbox-container {
+    margin-left: 28px;
+}
+/* Checkbox Input */
+
+/* Theater mode */
+div#cinematics-theater-container.style-scope.ytd-watch-flexy,
+div#columns.style-scope.ytd-watch-flexy,
+div#ycm-theater-mode-container {
+    transition: all 0.5s linear;
+}
+div#ycm-theater-mode-container.enabled {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #000000b0;
+    backdrop-filter: blur(10px);
+    z-index: 2050;
+}
+div#player-container.style-scope.ytd-watch-flexy.ycm-theater-mode {
+    z-index: 2060;
+}
+/* Theater mode */

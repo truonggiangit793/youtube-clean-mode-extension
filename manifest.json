@@ -1,0 +1,37 @@
+{
+    "name": "Youtube Clean Mode",
+    "version": "23.3.14",
+    "manifest_version": 3,
+    "author": "Truong Giang",
+    "description": "Hide the youtube title, top header, video controller and progress bar of video frame easily!",
+    "homepage_url": "https://github.com/truonggiangit793/youtube-clean-mode-extension",
+    "permissions": ["tabs"],
+    "host_permissions": ["https://www.youtube.com/*"],
+    "background": { "service_worker": "background.js" },
+    "externally_connectable": { "matches": ["https://www.youtube.com/*"] },
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "js": ["content.js"],
+            "css": ["style.css"]
+        }
+    ],
+    "icons": {
+        "16": "assets/video-player.png",
+        "32": "assets/video-player.png",
+        "48": "assets/video-player.png",
+        "64": "assets/video-player.png",
+        "128": "assets/video-player.png"
+    },
+    "action": {
+        "default_title": "Youtube Clean Mode",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "assets/video-player.png",
+            "32": "assets/video-player.png",
+            "48": "assets/video-player.png",
+            "64": "assets/video-player.png",
+            "128": "assets/video-player.png"
+        }
+    }
+}
