@@ -174,7 +174,7 @@
             innerHeight - clientY <= YCMMenuContainerHeight + 10
                 ? YCMSettingButton.getBoundingClientRect().y - YCMMenuContainerHeight
                 : YCMSettingButton.getBoundingClientRect().y + YCMSettingButton.getBoundingClientRect().height;
-        if (["svg", "path"].includes(parentNode.nodeName) || parentNode.id.includes("ycm-setting-button")) {
+        if (["svg", "path"].includes(parentNode?.nodeName) || parentNode.id.includes("ycm-setting-button")) {
             setYCMMenuContainerPosition(offsetRightPosition, offsetTopPosition);
             YCMMenuContainer.classList.toggle("enabled");
         } else {
