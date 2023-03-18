@@ -17,7 +17,7 @@ div.ytp-progress-bar-container.disabled {
 /* Menu container */
 #ycm-menu-container {
     width: 215px;
-    height: 256px;
+    height: 300px;
     display: none;
     position: fixed;
     z-index: 10000;

@@ -67,6 +67,24 @@
             },
         },
         {
+            title: "Hide suggestions",
+            id: "ycm-hide-suggestions",
+            method: function (value) {
+                const suggestionsArray = document.querySelectorAll("div.ytp-ce-element");
+                const YCMHideAll = document.querySelector("input#ycm-hide-all");
+                YCMHideAll.checked = value ? (!YCMHideAll.checked ? false : true) : false;
+                Array.from(document.querySelectorAll("input.ycm-checkbox-input"))
+                    .filter((item) => item.id !== "ycm-hide-all")
+                    .every((item) => item.checked == true)
+                    ? (YCMHideAll.checked = true)
+                    : undefined;
+                if (!suggestionsArray || !YCMHideAll) return;
+                suggestionsArray.forEach(function (item) {
+                    item.style.display = value ? "none" : "unset";
+                });
+            },
+        },
+        {
             title: "Theater mode",
             id: "ycm-theater-mode",
             method: function (value) {
@@ -140,7 +158,7 @@
         return nester(el, nest);
     };
 
-    const prependElementToDOM = (selector, element) => document.querySelector(selector).prepend(element);
+    const prependElementToDOM = (DOM, element) => DOM.prepend(element);
 
     const insertElementToDOM = (DOM, element) => DOM.appendChild(element);
 
@@ -161,7 +179,7 @@
     };
 
     const YCMToggleMenuHandler = (e) => {
-        const YCMMenuContainerHeight = 256;
+        const YCMMenuContainerHeight = 300;
         const YCMMenuContainerWidth = 215;
         const { clientY } = e;
         const { innerHeight } = e.view;
@@ -233,7 +251,18 @@
         });
     };
 
+    const checkIsHidingSuggestion = function () {
+        const hideSuggestionsCheckBox = document.querySelector("input#ycm-hide-suggestions");
+        const suggestionsArray = document.querySelectorAll("div.ytp-ce-element");
+        if (!hideSuggestionsCheckBox || !suggestionsArray) return;
+        if (!hideSuggestionsCheckBox.checked) return;
+        suggestionsArray.forEach((item) => {
+            item.style.display = "none";
+        });
+    };
+
     const installSettingsButton = function () {
+        checkIsHidingSuggestion();
         const youtubeMenuRenderer = document.querySelector("ytd-menu-renderer.style-scope.ytd-watch-metadata");
         if (!youtubeMenuRenderer) return;
         isAccessibleInstallElement({ tagName: "button", id: "ycm-setting-button", className: "ytp-button" }, function (err, settingsButton) {
